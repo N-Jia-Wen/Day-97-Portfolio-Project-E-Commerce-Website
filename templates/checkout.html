@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Mock Website Checkout{% endblock %}
+
+{% block stripe %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/static/checkout.js" defer></script>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+    <div class="container">
+      <div class="row">
+        <div class="col">
+            <h3 class="py-5">Product image:</h3>
+            <img src="/static/img/{{ item_name }}.jpg" height="400" class=""/>
+        </div>
+        <!-- Display a payment form -->
+        <div id="checkout" class="col">
+          <!-- Checkout will insert the payment form here -->
+        </div>
+
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+{% endblock %}

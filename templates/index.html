@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Mock Website Home Page{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+    <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        {% for item in test_items: %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="/static/img/{{ item.name }}.jpg">
+            <div class="card-body">
+              <p class="card-text">{{ item.name.title() }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{ url_for('checkout', price_id=item.price_id, item_name=item.name) }}" type="button" class="btn btn-sm btn-outline-secondary">Buy</a>
+                </div>
+                <small class="text-body-secondary">S${{ item.price_sgd }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+{% endblock %}

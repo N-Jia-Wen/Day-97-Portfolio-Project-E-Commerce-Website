@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Mock Website About Page{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+    <section class="d-flex text-center container" style="align-items: center; justify-content: center; height: 100vh">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Welcome to my online shop!</h1>
+        <p class="lead text-body-secondary">This is an example jewellery website meant to test the features provided by the Stripe API. All goods displayed are solely for testing purposes and are not for sale.</p>
+        <p>
+          <a href="{{ url_for('home') }}" class="btn btn-primary my-2">Return to Home page</a>
+        </p>
+      </div>
+    </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+{% endblock %}
